@@ -24,7 +24,7 @@ FROM
 WHERE
     age <= 50;
 ~~~~ 
-It's going to run faster if the table is indexed by age because underneath there will be a lookup table that points exactly where the age is greater than 50.  
+It's going to run faster if the table is indexed by age because underneath there will be a lookup table that points exactly where the age is greater than 50. Another advantage of the indexing is that the *update* statement (only when updating a few rows) is going to run faster since we have direct access to rows, apart from that there exists few disadvantages with indexing one is that the lookup table needs additional disk space, the writing operations on the table are going to be slow because at the time of **inserting** or **deleting** the index lookup table has to update all the modified indexes as well.
 **Resources**:  
 * https://www.tutorialspoint.com/sqlite/sqlite_indexes.htm
 * https://stackoverflow.com/questions/1108/how-does-database-indexing-work
